@@ -54,6 +54,16 @@ public class ExpressionTree {
     }
   }
 
+  /*return the expression as a postfix notation string without parenthesis*/
+  /* The sample tree would be: "3 2 10 * +"     */
+  public String toStringPostfix() {
+    if (isValue()) {
+      return "" + getValue();
+    } else {
+      return "" + getLeft().toStringPostfix() + " " + getRight().toStringPostfix() + " " + getOp();
+    }
+  }
+
 
   public static void main(String[] args){
     //ugly main sorry!
