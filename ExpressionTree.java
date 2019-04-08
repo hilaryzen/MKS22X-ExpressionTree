@@ -83,6 +83,20 @@ public class ExpressionTree {
     }
   }
 
+  //apply the correct op to a and b, and return the value
+  private double apply(char op, double a, double b) {
+    if (op == '+') {
+      return a + b;
+    } else if (op == '-') {
+      return a - b;
+    } else if (op == '*') {
+      return a * b;
+    } else if (op == '/') {
+      return a / b;
+    }
+    return 0.0;
+  }
+
 
   public static void main(String[] args){
     //ugly main sorry!
