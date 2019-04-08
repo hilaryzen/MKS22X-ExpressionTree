@@ -50,7 +50,7 @@ public class ExpressionTree {
     if (isValue()) {
       return "" + getValue();
     } else {
-      return "(" + getLeft.toString() + " " + getOp() + " " + getRight.toString() + ")";
+      return "(" + getLeft().toString() + " " + getOp() + " " + getRight().toString() + ")";
     }
   }
 
@@ -79,7 +79,7 @@ public class ExpressionTree {
     if (isValue()) {
       return getValue();
     } else {
-      return perform(getOp(), getLeft().evaluate(), getRight().evaluate());
+      return apply(getOp(), getLeft().evaluate(), getRight().evaluate());
     }
   }
 
