@@ -74,6 +74,15 @@ public class ExpressionTree {
     }
   }
 
+  //return the value of the expression tree
+  public double evaluate() {
+    if (isValue()) {
+      return getValue();
+    } else {
+      return perform(getOp(), getLeft().evaluate(), getRight().evaluate());
+    }
+  }
+
 
   public static void main(String[] args){
     //ugly main sorry!
