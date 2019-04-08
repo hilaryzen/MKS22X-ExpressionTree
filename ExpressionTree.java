@@ -64,6 +64,16 @@ public class ExpressionTree {
     }
   }
 
+  /*return the expression as a prefix notation string without parenthesis*/
+  /* The sample tree would be: "+ 3 * 2 10"     */
+  public String toStringPrefix() {
+    if (isValue()) {
+      return "" + getValue();
+    } else {
+      return "" + getOp() + " " + getLeft().toStringPrefix() + " " + getRight().toStringPrefix();
+    }
+  }
+
 
   public static void main(String[] args){
     //ugly main sorry!
